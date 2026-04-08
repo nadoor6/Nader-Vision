@@ -1,4 +1,4 @@
-/* ----- RESET & LUXURY BASE ----- */
+/* ----- RESET & MONOCHROME BASE ----- */
 
 * {
     margin: 0;
@@ -7,8 +7,10 @@
 }
 
 body {
-    background-color: #0A0A0A;
-    color: #F5F5F7;
+    background-color: #FFFFFF;
+    /* Pure White */
+    color: #000000;
+    /* Pure Black */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.1;
     font-weight: 300;
@@ -17,56 +19,38 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* ----- THE SECRET LUXURY GRID (Subtle Texture) ----- */
-
-.grid-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, rgba(184, 155, 123, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 155, 123, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-
-/* ----- MAIN CONTAINER (Centered Masterpiece) ----- */
+/* ----- MAIN CONTAINER ----- */
 
 .container {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     min-height: 85vh;
 }
 
 
-/* ----- TYPOGRAPHY DETAILS (Luxury is in the spacing) ----- */
+/* ----- TYPOGRAPHY & SPACING (Luxury is in the restraint) ----- */
 
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(245, 245, 247, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Subtle Black Line */
     margin-bottom: 4rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-size: 0.7rem;
     font-weight: 500;
-    color: #B89B7B;
-    /* Aleppo Sand */
+    color: #000000;
 }
 
 .logo {
@@ -76,7 +60,8 @@ body {
 
 .location {
     letter-spacing: 0.1em;
-    color: rgba(245, 245, 247, 0.5);
+    color: rgba(0, 0, 0, 0.4);
+    /* Gray text for secondary info */
 }
 
 
@@ -92,13 +77,14 @@ body {
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 2rem;
-    color: #F5F5F7;
+    color: #000000;
 }
 
 .divider {
     width: 80px;
     height: 2px;
-    background: #B89B7B;
+    background: #000000;
+    /* Black Divider */
     margin: 2.5rem 0;
 }
 
@@ -106,12 +92,13 @@ body {
     font-size: clamp(1rem, 3vw, 1.25rem);
     line-height: 1.6;
     font-weight: 300;
-    color: rgba(245, 245, 247, 0.7);
+    color: rgba(0, 0, 0, 0.65);
+    /* Dark Gray for readability */
     max-width: 600px;
 }
 
 
-/* ----- STATUS BLOCK (The Data of Ambition) ----- */
+/* ----- STATUS BLOCK ----- */
 
 .status-block {
     display: flex;
@@ -130,7 +117,7 @@ body {
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #B89B7B;
+    color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
 }
 
@@ -138,16 +125,16 @@ body {
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: -0.02em;
-    color: #F5F5F7;
+    color: #000000;
 }
 
 
-/* ----- FOOTER & LINKS ----- */
+/* ----- FOOTER & LINKS (Minimalist Interaction) ----- */
 
 .site-footer {
     margin-top: auto;
     padding-top: 4rem;
-    border-top: 1px solid rgba(245, 245, 247, 0.08);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -160,31 +147,31 @@ body {
     gap: 3rem;
 }
 
-.link-underline {
-    color: #F5F5F7;
+.link-minimal {
+    color: #000000;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: -0.01em;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgba(184, 155, 123, 0.4);
-    transition: border-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.2s ease;
 }
 
-.link-underline:hover {
-    color: #B89B7B;
-    border-bottom-color: #B89B7B;
+.link-minimal:hover {
+    border-bottom-color: #000000;
+    /* Solid black on hover */
 }
 
 .copyright {
-    color: rgba(245, 245, 247, 0.3);
+    color: rgba(0, 0, 0, 0.4);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
 
-/* ----- MOBILE RESPONSIVENESS (Still Luxurious) ----- */
+/* ----- MOBILE RESPONSIVENESS ----- */
 
 @media (max-width: 600px) {
     body {
