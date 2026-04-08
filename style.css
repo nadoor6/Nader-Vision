@@ -1,4 +1,4 @@
-/* ----- RESET & SWISS BASE ----- */
+/* ----- RESET & CENTERED BOLD BASE ----- */
 
 * {
     margin: 0;
@@ -9,207 +9,183 @@
 body {
     background-color: #FFFFFF;
     color: #000000;
-    font-family: "Inter", -apple-system, sans-serif;
-    font-weight: 300;
-    line-height: 1.0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    /* Base weight is medium now */
+    line-height: 1.2;
     min-height: 100vh;
-    padding: 3rem;
-    font-feature-settings: "ss01", "ss02", "cv01";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
     -webkit-font-smoothing: antialiased;
 }
 
 
-/* ----- THE SWISS GRID (24 Columns) ----- */
+/* ----- CENTERED CONTAINER ----- */
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    gap: 1rem;
-    max-width: 1600px;
+.center-container {
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
-    min-height: 85vh;
-    align-content: start;
-    /* Align content to top */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 
-/* ----- GRID PLACEMENT (Precise positioning) ----- */
+/* ----- HEADER (Centered Stack) ----- */
 
-.grid-header-logo {
-    grid-column: 1 / span 5;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.3em;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.logo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
     text-transform: uppercase;
     color: #000;
-    padding-bottom: 1rem;
 }
 
-.grid-header-location {
-    grid-column: 20 / span 5;
+.location {
     font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.5);
-    text-align: right;
-    padding-bottom: 1rem;
 }
 
-.grid-divider {
-    grid-column: 1 / -1;
-    height: 1px;
+
+/* ----- DIVIDER (Short & Centered) ----- */
+
+.divider {
+    width: 60px;
+    height: 2px;
     background: #000;
-    margin: 1rem 0 5rem 0;
-    opacity: 0.1;
+    margin: 1rem 0;
+    opacity: 0.15;
 }
 
 
-/* Hero Text */
+/* ----- HERO (Bold & Centered) ----- */
 
-.grid-hero {
-    grid-column: 5 / span 12;
-    margin-bottom: 2rem;
-}
-
-.grid-hero h1 {
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 350;
-    line-height: 1.15;
+.hero-text {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 700;
+    /* BOLD */
+    line-height: 1.1;
     letter-spacing: -0.03em;
-    color: #000;
+    max-width: 900px;
+    margin: 0.5rem 0;
 }
 
-
-/* Subhead */
-
-.grid-subhead {
-    grid-column: 5 / span 10;
-    margin-bottom: 6rem;
-}
-
-.grid-subhead p {
-    font-size: 1.1rem;
-    font-weight: 350;
+.subhead-text {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: 500;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    margin: 0.5rem 0 2rem 0;
 }
 
 
-/* Status Block */
+/* ----- STATUS GROUP (Centered Columns on Mobile, Row on Desktop) ----- */
 
-.grid-status-label-1 {
-    grid-column: 5 / span 4;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.5rem;
-}
-
-.grid-status-value-1 {
-    grid-column: 5 / span 6;
-    font-size: 1.8rem;
-    font-weight: 350;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
-}
-
-.grid-status-label-2 {
-    grid-column: 13 / span 4;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.5rem;
-}
-
-.grid-status-value-2 {
-    grid-column: 13 / span 6;
-    font-size: 1.8rem;
-    font-weight: 350;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
-}
-
-
-/* Footer */
-
-.grid-footer-links {
-    grid-column: 5 / span 8;
-    margin-top: 6rem;
+.status-group {
     display: flex;
-    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem 6rem;
+    margin: 2rem 0 3rem 0;
 }
 
-.grid-footer-links a {
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.value {
+    font-size: 2rem;
+    font-weight: 700;
+    /* BOLD */
+    letter-spacing: -0.02em;
+    color: #000;
+}
+
+
+/* ----- FOOTER (Centered) ----- */
+
+.footer {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.social-links a {
     color: #000;
     text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 2px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
     transition: border-color 0.2s;
 }
 
-.grid-footer-links a:hover {
+.social-links a:hover {
     border-bottom-color: #000;
 }
 
-.grid-footer-copyright {
-    grid-column: 20 / span 5;
-    margin-top: 6rem;
-    font-size: 0.6rem;
-    font-weight: 400;
+.copyright {
+    font-size: 0.65rem;
+    font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.4);
-    text-align: right;
 }
 
 
-/* ----- MOBILE FALLBACK (Collapses to single column) ----- */
+/* ----- MOBILE TWEAKS ----- */
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
     body {
         padding: 1.5rem;
     }
-    .grid-container {
-        display: flex;
+    .status-group {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 2rem;
     }
-    .grid-header-logo,
-    .grid-header-location,
-    .grid-hero,
-    .grid-subhead,
-    .grid-status-label-1,
-    .grid-status-value-1,
-    .grid-status-label-2,
-    .grid-status-value-2,
-    .grid-footer-links,
-    .grid-footer-copyright {
-        grid-column: auto;
-        text-align: left;
-        margin-bottom: 1rem;
+    .value {
+        font-size: 1.6rem;
     }
-    .grid-header-location {
-        text-align: left;
-    }
-    .grid-footer-copyright {
-        text-align: left;
-        margin-top: 2rem;
-    }
-    .grid-divider {
-        margin: 1rem 0 2rem 0;
-    }
-    .grid-footer-links {
-        margin-top: 2rem;
-        flex-direction: column;
-        gap: 1rem;
+    .social-links {
+        gap: 2rem;
     }
 }
