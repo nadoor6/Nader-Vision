@@ -1,5 +1,3 @@
-/* ----- RESET & CENTERED BOLD BASE ----- */
-
 * {
     margin: 0;
     padding: 0;
@@ -7,10 +5,12 @@
 }
 
 body {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: #540B0E;
+    /* YOUR COLOR AS CANVAS */
+    color: #F5F0E8;
+    /* Warm cream text */
     font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.2;
     min-height: 100vh;
     display: flex;
@@ -19,9 +19,6 @@ body {
     padding: 2.5rem;
     -webkit-font-smoothing: antialiased;
 }
-
-
-/* ----- CENTERED CONTAINER ----- */
 
 .center-container {
     max-width: 1000px;
@@ -33,9 +30,6 @@ body {
     align-items: center;
     gap: 2rem;
 }
-
-
-/* ----- HEADER (Black & Gray - supporting cast) ----- */
 
 .header {
     display: flex;
@@ -50,7 +44,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: #000;
+    color: #FFFFFF;
 }
 
 .location {
@@ -58,24 +52,16 @@ body {
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(245, 240, 232, 0.6);
 }
-
-
-/* ----- DIVIDER (Burgundy Statement) ----- */
 
 .divider {
     width: 80px;
-    /* Slightly wider for presence */
     height: 2px;
-    background: #540B0E;
+    background: #F5F0E8;
     margin: 1rem 0;
-    opacity: 1;
-    /* Full strength */
+    opacity: 0.5;
 }
-
-
-/* ----- HERO (Headline in YOUR color) ----- */
 
 .hero-text {
     font-size: clamp(2.8rem, 8vw, 5rem);
@@ -84,21 +70,17 @@ body {
     letter-spacing: -0.03em;
     max-width: 900px;
     margin: 0.5rem 0;
-    color: #540B0E;
-    /* PRIMARY COLOR */
+    color: #FFFFFF;
 }
 
 .subhead-text {
     font-size: clamp(1rem, 3vw, 1.3rem);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.6;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(245, 240, 232, 0.8);
     max-width: 600px;
     margin: 0.5rem 0 2rem 0;
 }
-
-
-/* ----- STATUS GROUP (Countdown in Burgundy) ----- */
 
 .status-group {
     display: flex;
@@ -121,7 +103,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(245, 240, 232, 0.5);
     text-align: center;
 }
 
@@ -129,15 +111,11 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #540B0E;
-    /* PRIMARY COLOR */
+    color: #FFFFFF;
     text-align: center;
     min-width: 260px;
     white-space: nowrap;
 }
-
-
-/* ----- FOOTER (Icons default to Burgundy) ----- */
 
 .footer {
     margin-top: 3rem;
@@ -162,12 +140,11 @@ body {
     padding: 0.5rem;
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s, opacity 0.2s;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .social-links a:hover {
-    border-bottom-color: #000;
-    /* Black underline on hover */
+    border-bottom-color: #F5F0E8;
     opacity: 1;
 }
 
@@ -175,19 +152,13 @@ body {
     display: block;
 }
 
-
-/* Override SVG fill to Burgundy */
-
 .social-links a svg path {
-    fill: #540B0E;
+    fill: #F5F0E8;
     transition: fill 0.2s;
 }
 
-
-/* On hover, icons turn black */
-
 .social-links a:hover svg path {
-    fill: #000;
+    fill: #FFFFFF;
 }
 
 .copyright {
@@ -195,11 +166,8 @@ body {
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(245, 240, 232, 0.4);
 }
-
-
-/* ----- MOBILE TWEAKS ----- */
 
 @media (max-width: 600px) {
     body {
@@ -217,7 +185,6 @@ body {
     .value {
         font-size: 1.4rem;
         min-width: 220px;
-        white-space: nowrap;
     }
     .social-links {
         gap: 2rem;
