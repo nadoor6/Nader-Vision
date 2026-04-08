@@ -21,7 +21,7 @@ body {
 }
 
 
-/* ----- LUXURY PATTERN OVERLAY (Burgundy, very faint) ----- */
+/* ----- LUXURY FRENCH-LEVANTINE PATTERN (Burgundy, very faint) ----- */
 
 body::before {
     content: "";
@@ -32,11 +32,12 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: 1;
-    /* Subtle geometric grid – burgundy at 3% opacity */
-    background-image: linear-gradient(to right, #540B0E 1px, transparent 1px), linear-gradient(to bottom, #540B0E 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.03;
-    /* Nearly invisible */
+    opacity: 0.08;
+    /* Whisper of luxury */
+    /* Custom SVG pattern: Damask + Fleur-de-lis + Toile vines */
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='tile' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3C!-- Base Lattice --%3E%3Cpath d='M100 0 L100 200 M0 100 L200 100' stroke='%23540B0E' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Cpath d='M0 0 L200 200 M200 0 L0 200' stroke='%23540B0E' stroke-width='0.3' fill='none' opacity='0.15'/%3E%3C!-- Central Damask Medallion (Levantine Soul) --%3E%3Ccircle cx='100' cy='100' r='45' stroke='%23540B0E' stroke-width='1' fill='none' opacity='0.6'/%3E%3Ccircle cx='100' cy='100' r='35' stroke='%23540B0E' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Ccircle cx='100' cy='100' r='15' fill='%23540B0E' opacity='0.3'/%3E%3Cpath d='M100 55 Q120 70 115 100 Q120 130 100 145 Q80 130 85 100 Q80 70 100 55' fill='%23540B0E' opacity='0.2'/%3E%3Cpath d='M55 100 Q70 80 100 85 Q130 80 145 100 Q130 120 100 115 Q70 120 55 100' fill='%23540B0E' opacity='0.2'/%3E%3C!-- French Fleur-de-lis in Corners --%3E%3Cg transform='translate(25,25) scale(0.6)' fill='%23540B0E' opacity='0.5'%3E%3Cpath d='M25 0 C25 15 15 20 15 30 C15 40 20 45 25 50 C30 45 35 40 35 30 C35 20 25 15 25 0 Z'/%3E%3Cpath d='M5 35 C15 35 20 30 25 35 C30 30 35 35 45 35 C45 45 40 50 35 50 L15 50 C10 50 5 45 5 35 Z'/%3E%3C/g%3E%3Cg transform='translate(175,25) scale(0.6)' fill='%23540B0E' opacity='0.5'%3E%3Cpath d='M25 0 C25 15 15 20 15 30 C15 40 20 45 25 50 C30 45 35 40 35 30 C35 20 25 15 25 0 Z'/%3E%3Cpath d='M5 35 C15 35 20 30 25 35 C30 30 35 35 45 35 C45 45 40 50 35 50 L15 50 C10 50 5 45 5 35 Z'/%3E%3C/g%3E%3Cg transform='translate(25,175) scale(0.6)' fill='%23540B0E' opacity='0.5'%3E%3Cpath d='M25 0 C25 15 15 20 15 30 C15 40 20 45 25 50 C30 45 35 40 35 30 C35 20 25 15 25 0 Z'/%3E%3Cpath d='M5 35 C15 35 20 30 25 35 C30 30 35 35 45 35 C45 45 40 50 35 50 L15 50 C10 50 5 45 5 35 Z'/%3E%3C/g%3E%3Cg transform='translate(175,175) scale(0.6)' fill='%23540B0E' opacity='0.5'%3E%3Cpath d='M25 0 C25 15 15 20 15 30 C15 40 20 45 25 50 C30 45 35 40 35 30 C35 20 25 15 25 0 Z'/%3E%3Cpath d='M5 35 C15 35 20 30 25 35 C30 30 35 35 45 35 C45 45 40 50 35 50 L15 50 C10 50 5 45 5 35 Z'/%3E%3C/g%3E%3C!-- Refined Toile Vines (French Elegance) --%3E%3Cpath d='M40 100 Q60 70 100 70 Q140 70 160 100' stroke='%23540B0E' stroke-width='0.8' fill='none' opacity='0.4'/%3E%3Cpath d='M40 100 Q60 130 100 130 Q140 130 160 100' stroke='%23540B0E' stroke-width='0.8' fill='none' opacity='0.4'/%3E%3Ccircle cx='70' cy='65' r='2' fill='%23540B0E' opacity='0.4'/%3E%3Ccircle cx='130' cy='65' r='2' fill='%23540B0E' opacity='0.4'/%3E%3Ccircle cx='70' cy='135' r='2' fill='%23540B0E' opacity='0.4'/%3E%3Ccircle cx='130' cy='135' r='2' fill='%23540B0E' opacity='0.4'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23tile)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    background-repeat: repeat;
 }
 
 
@@ -118,7 +119,7 @@ body::before {
 }
 
 
-/* ----- STATUS GROUP ----- */
+/* ----- STATUS GROUP (Fixed Widths) ----- */
 
 .status-group {
     display: flex;
