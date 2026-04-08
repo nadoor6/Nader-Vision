@@ -132,7 +132,7 @@ body {
 }
 
 
-/* ----- FOOTER (Centered) ----- */
+/* ----- FOOTER (Centered with Icon Links) ----- */
 
 .footer {
     margin-top: 3rem;
@@ -145,24 +145,28 @@ body {
 
 .social-links {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     justify-content: center;
+    align-items: center;
 }
 
 .social-links a {
-    color: #000;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding-bottom: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, opacity 0.2s;
+    opacity: 0.8;
 }
 
 .social-links a:hover {
     border-bottom-color: #000;
+    opacity: 1;
+}
+
+.social-links a svg {
+    display: block;
 }
 
 .copyright {
