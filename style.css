@@ -5,10 +5,10 @@
 }
 
 body {
-    background-color: #540B0E;
-    /* YOUR COLOR AS CANVAS */
-    color: #F5F0E8;
-    /* Warm cream text */
+    background-color: #F9F6F0;
+    /* Warm parchment */
+    color: #1A1A1A;
+    /* Soft black */
     font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     line-height: 1.2;
@@ -44,7 +44,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #1A1A1A;
 }
 
 .location {
@@ -52,15 +52,16 @@ body {
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(245, 240, 232, 0.6);
+    color: rgba(26, 26, 26, 0.5);
 }
 
 .divider {
     width: 80px;
     height: 2px;
-    background: #F5F0E8;
+    background: #540B0E;
+    /* Burgundy divider */
     margin: 1rem 0;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .hero-text {
@@ -70,14 +71,15 @@ body {
     letter-spacing: -0.03em;
     max-width: 900px;
     margin: 0.5rem 0;
-    color: #FFFFFF;
+    color: #540B0E;
+    /* Burgundy headline */
 }
 
 .subhead-text {
     font-size: clamp(1rem, 3vw, 1.3rem);
     font-weight: 400;
     line-height: 1.6;
-    color: rgba(245, 240, 232, 0.8);
+    color: rgba(26, 26, 26, 0.7);
     max-width: 600px;
     margin: 0.5rem 0 2rem 0;
 }
@@ -103,7 +105,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(245, 240, 232, 0.5);
+    color: rgba(26, 26, 26, 0.5);
     text-align: center;
 }
 
@@ -111,7 +113,8 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #FFFFFF;
+    color: #540B0E;
+    /* Burgundy countdown */
     text-align: center;
     min-width: 260px;
     white-space: nowrap;
@@ -144,7 +147,7 @@ body {
 }
 
 .social-links a:hover {
-    border-bottom-color: #F5F0E8;
+    border-bottom-color: #540B0E;
     opacity: 1;
 }
 
@@ -153,12 +156,14 @@ body {
 }
 
 .social-links a svg path {
-    fill: #F5F0E8;
+    fill: #540B0E;
+    /* Burgundy icons */
     transition: fill 0.2s;
 }
 
 .social-links a:hover svg path {
-    fill: #FFFFFF;
+    fill: #1A1A1A;
+    /* Darken on hover */
 }
 
 .copyright {
@@ -166,7 +171,7 @@ body {
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(245, 240, 232, 0.4);
+    color: rgba(26, 26, 26, 0.4);
 }
 
 @media (max-width: 600px) {
