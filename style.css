@@ -8,7 +8,6 @@ body {
     background-color: #F9F6F0;
     /* Warm parchment */
     color: #1A1A1A;
-    /* Soft black */
     font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     line-height: 1.2;
@@ -18,7 +17,30 @@ body {
     justify-content: center;
     padding: 2.5rem;
     -webkit-font-smoothing: antialiased;
+    position: relative;
 }
+
+
+/* ----- LUXURY PATTERN OVERLAY (Burgundy, very faint) ----- */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    /* Subtle geometric grid – burgundy at 3% opacity */
+    background-image: linear-gradient(to right, #540B0E 1px, transparent 1px), linear-gradient(to bottom, #540B0E 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.03;
+    /* Nearly invisible */
+}
+
+
+/* ----- CENTERED CONTAINER WITH SUBTLE SHADOW ----- */
 
 .center-container {
     max-width: 1000px;
@@ -29,7 +51,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    position: relative;
+    z-index: 2;
+    /* The whisper of depth */
+    filter: drop-shadow(0 20px 30px rgba(84, 11, 14, 0.04));
 }
+
+
+/* ----- HEADER ----- */
 
 .header {
     display: flex;
@@ -55,14 +84,19 @@ body {
     color: rgba(26, 26, 26, 0.5);
 }
 
+
+/* ----- DIVIDER (Burgundy) ----- */
+
 .divider {
     width: 80px;
     height: 2px;
     background: #540B0E;
-    /* Burgundy divider */
     margin: 1rem 0;
     opacity: 0.6;
 }
+
+
+/* ----- HERO ----- */
 
 .hero-text {
     font-size: clamp(2.8rem, 8vw, 5rem);
@@ -72,7 +106,6 @@ body {
     max-width: 900px;
     margin: 0.5rem 0;
     color: #540B0E;
-    /* Burgundy headline */
 }
 
 .subhead-text {
@@ -83,6 +116,9 @@ body {
     max-width: 600px;
     margin: 0.5rem 0 2rem 0;
 }
+
+
+/* ----- STATUS GROUP ----- */
 
 .status-group {
     display: flex;
@@ -114,11 +150,13 @@ body {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: #540B0E;
-    /* Burgundy countdown */
     text-align: center;
     min-width: 260px;
     white-space: nowrap;
 }
+
+
+/* ----- FOOTER ----- */
 
 .footer {
     margin-top: 3rem;
@@ -157,13 +195,11 @@ body {
 
 .social-links a svg path {
     fill: #540B0E;
-    /* Burgundy icons */
     transition: fill 0.2s;
 }
 
 .social-links a:hover svg path {
     fill: #1A1A1A;
-    /* Darken on hover */
 }
 
 .copyright {
@@ -173,6 +209,9 @@ body {
     text-transform: uppercase;
     color: rgba(26, 26, 26, 0.4);
 }
+
+
+/* ----- MOBILE ----- */
 
 @media (max-width: 600px) {
     body {
