@@ -4,68 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NADER VISION · Rebuilding Aleppo</title>
+    <title>NADER VISION · Aleppo</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Pure B&W Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='300' fill='black'>NV</text></svg>">
+    <!-- Swiss Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <!-- Header: The Signal -->
-            <header class="site-header">
-                <span class="logo">NADER VISION</span>
-                <span class="location">📍 ALEPPO, SYRIA</span>
-            </header>
+    <div class="grid-container">
+        <!-- Header: Positioned in specific grid cells -->
+        <div class="grid-header-logo">NADER VISION</div>
+        <div class="grid-header-location">📍 ALEPPO, SYRIA</div>
 
-            <!-- Hero: The Statement -->
-            <section class="hero">
-                <h1 class="main-quote">
-                    Rebuilding begins <br>with a single foundation.
-                </h1>
-                <div class="divider"></div>
-                <p class="subhead">
-                    I'm Nader. 18. In my final year of high school.<br> This is the starting line of the new Syrian skyline.
-                </p>
-            </section>
+        <!-- Divider Line (Spans columns) -->
+        <div class="grid-divider"></div>
 
-            <!-- Status: The Countdown (Proof of Work) -->
-            <section class="status-block">
-                <div class="status-item">
-                    <span class="label">FOCUS MODE</span>
-                    <span class="value">FINALS IN <span id="countdown-timer">--</span></span>
-                </div>
-                <div class="status-item">
-                    <span class="label">CURRENT CHAPTER</span>
-                    <span class="value">STUDENT · DEVELOPER</span>
-                </div>
-            </section>
-
-            <!-- Footer: The Connection -->
-            <footer class="site-footer">
-                <div class="social-links">
-                    <a href="https://x.com/iiiiinader" target="_blank" class="link-minimal">X/TWITTER</a>
-                    <a href="https://instagram.com/iiiiinader" target="_blank" class="link-minimal">INSTAGRAM</a>
-                </div>
-                <div class="copyright">
-                    <span>© 2026 NADER VISION · DOCUMENTING THE RISE</span>
-                </div>
-            </footer>
+        <!-- Main Content -->
+        <div class="grid-hero">
+            <h1>Rebuilding begins with a single foundation.</h1>
         </div>
-    </main>
 
-    <!-- Simple JS for Countdown (Finals in 2 months approx) -->
+        <div class="grid-subhead">
+            <p>I'm Nader. 18. In my final year of high school. This is the starting line of the new Syrian skyline.</p>
+        </div>
+
+        <!-- Status Block -->
+        <div class="grid-status-label-1">FOCUS MODE</div>
+        <div class="grid-status-value-1">FINALS IN <span id="countdown-timer">--</span></div>
+
+        <div class="grid-status-label-2">CURRENT CHAPTER</div>
+        <div class="grid-status-value-2">STUDENT · DEVELOPER</div>
+
+        <!-- Footer Links -->
+        <div class="grid-footer-links">
+            <a href="https://x.com/iiiiinader" target="_blank">X/TWITTER</a>
+            <a href="https://instagram.com/iiiiinader" target="_blank">INSTAGRAM</a>
+        </div>
+        <div class="grid-footer-copyright">© 2026 NADER VISION</div>
+    </div>
+
     <script>
-        // Set the date we're counting down to (e.g., June 10, 2026)
         var countDownDate = new Date("June 10, 2026 00:00:00").getTime();
-
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = countDownDate - now;
-
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
             if (days > 0) {
                 document.getElementById("countdown-timer").innerHTML = days + " DAYS";
             } else {

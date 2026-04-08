@@ -1,4 +1,4 @@
-/* ----- RESET & MONOCHROME BASE ----- */
+/* ----- RESET & SWISS BASE ----- */
 
 * {
     margin: 0;
@@ -8,201 +8,208 @@
 
 body {
     background-color: #FFFFFF;
-    /* Pure White */
     color: #000000;
-    /* Pure Black */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.1;
+    font-family: "Inter", -apple-system, sans-serif;
     font-weight: 300;
+    line-height: 1.0;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    padding: 3rem;
+    font-feature-settings: "ss01", "ss02", "cv01";
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* ----- MAIN CONTAINER ----- */
+/* ----- THE SWISS GRID (24 Columns) ----- */
 
-.container {
-    max-width: 1280px;
-    width: 100%;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 1rem;
+    max-width: 1600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     min-height: 85vh;
+    align-content: start;
+    /* Align content to top */
 }
 
 
-/* ----- TYPOGRAPHY & SPACING (Luxury is in the restraint) ----- */
+/* ----- GRID PLACEMENT (Precise positioning) ----- */
 
-.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    /* Subtle Black Line */
-    margin-bottom: 4rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: #000000;
-}
-
-.logo {
-    letter-spacing: 0.4em;
+.grid-header-logo {
+    grid-column: 1 / span 5;
+    font-size: 0.8rem;
     font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #000;
+    padding-bottom: 1rem;
 }
 
-.location {
-    letter-spacing: 0.1em;
-    color: rgba(0, 0, 0, 0.4);
-    /* Gray text for secondary info */
+.grid-header-location {
+    grid-column: 20 / span 5;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    padding-bottom: 1rem;
+}
+
+.grid-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: #000;
+    margin: 1rem 0 5rem 0;
+    opacity: 0.1;
 }
 
 
-/* ----- HERO SECTION ----- */
+/* Hero Text */
 
-.hero {
-    margin-bottom: 6rem;
-}
-
-.main-quote {
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+.grid-hero {
+    grid-column: 5 / span 12;
     margin-bottom: 2rem;
-    color: #000000;
 }
 
-.divider {
-    width: 80px;
-    height: 2px;
-    background: #000000;
-    /* Black Divider */
-    margin: 2.5rem 0;
-}
-
-.subhead {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    line-height: 1.6;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.65);
-    /* Dark Gray for readability */
-    max-width: 600px;
+.grid-hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 350;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #000;
 }
 
 
-/* ----- STATUS BLOCK ----- */
+/* Subhead */
 
-.status-block {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
+.grid-subhead {
+    grid-column: 5 / span 10;
     margin-bottom: 6rem;
 }
 
-.status-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.grid-subhead p {
+    font-size: 1.1rem;
+    font-weight: 350;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
 }
 
-.label {
+
+/* Status Block */
+
+.grid-status-label-1 {
+    grid-column: 5 / span 4;
     font-size: 0.65rem;
+    font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.5);
-    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
-.value {
+.grid-status-value-1 {
+    grid-column: 5 / span 6;
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 350;
     letter-spacing: -0.02em;
-    color: #000000;
+    margin-bottom: 3rem;
+}
+
+.grid-status-label-2 {
+    grid-column: 13 / span 4;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.grid-status-value-2 {
+    grid-column: 13 / span 6;
+    font-size: 1.8rem;
+    font-weight: 350;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
 }
 
 
-/* ----- FOOTER & LINKS (Minimalist Interaction) ----- */
+/* Footer */
 
-.site-footer {
-    margin-top: auto;
-    padding-top: 4rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+.grid-footer-links {
+    grid-column: 5 / span 8;
+    margin-top: 6rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
-.social-links {
-    display: flex;
-    gap: 3rem;
-}
-
-.link-minimal {
-    color: #000000;
+.grid-footer-links a {
+    color: #000;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    letter-spacing: -0.01em;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    transition: border-color 0.2s ease;
-}
-
-.link-minimal:hover {
-    border-bottom-color: #000000;
-    /* Solid black on hover */
-}
-
-.copyright {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+}
+
+.grid-footer-links a:hover {
+    border-bottom-color: #000;
+}
+
+.grid-footer-copyright {
+    grid-column: 20 / span 5;
+    margin-top: 6rem;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: right;
 }
 
 
-/* ----- MOBILE RESPONSIVENESS ----- */
+/* ----- MOBILE FALLBACK (Collapses to single column) ----- */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     body {
         padding: 1.5rem;
     }
-    .site-header {
+    .grid-container {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
     }
-    .main-quote {
-        font-size: 2.2rem;
+    .grid-header-logo,
+    .grid-header-location,
+    .grid-hero,
+    .grid-subhead,
+    .grid-status-label-1,
+    .grid-status-value-1,
+    .grid-status-label-2,
+    .grid-status-value-2,
+    .grid-footer-links,
+    .grid-footer-copyright {
+        grid-column: auto;
+        text-align: left;
+        margin-bottom: 1rem;
     }
-    .divider {
-        margin: 1.5rem 0;
+    .grid-header-location {
+        text-align: left;
     }
-    .status-block {
-        gap: 2rem;
-        margin-bottom: 3rem;
+    .grid-footer-copyright {
+        text-align: left;
+        margin-top: 2rem;
     }
-    .value {
-        font-size: 1.4rem;
+    .grid-divider {
+        margin: 1rem 0 2rem 0;
     }
-    .site-footer {
+    .grid-footer-links {
+        margin-top: 2rem;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-    .social-links {
-        gap: 2rem;
+        gap: 1rem;
     }
 }
