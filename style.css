@@ -35,7 +35,7 @@ body {
 }
 
 
-/* ----- HEADER (Centered Stack) ----- */
+/* ----- HEADER (Black & Gray - supporting cast) ----- */
 
 .header {
     display: flex;
@@ -62,18 +62,20 @@ body {
 }
 
 
-/* ----- DIVIDER (Burgundy #540B0E) ----- */
+/* ----- DIVIDER (Burgundy Statement) ----- */
 
 .divider {
-    width: 60px;
+    width: 80px;
+    /* Slightly wider for presence */
     height: 2px;
     background: #540B0E;
     margin: 1rem 0;
-    opacity: 0.4;
+    opacity: 1;
+    /* Full strength */
 }
 
 
-/* ----- HERO (Bold & Centered) ----- */
+/* ----- HERO (Headline in YOUR color) ----- */
 
 .hero-text {
     font-size: clamp(2.8rem, 8vw, 5rem);
@@ -82,7 +84,8 @@ body {
     letter-spacing: -0.03em;
     max-width: 900px;
     margin: 0.5rem 0;
-    color: #000;
+    color: #540B0E;
+    /* PRIMARY COLOR */
 }
 
 .subhead-text {
@@ -95,7 +98,7 @@ body {
 }
 
 
-/* ----- STATUS GROUP (Countdown Value in Burgundy) ----- */
+/* ----- STATUS GROUP (Countdown in Burgundy) ----- */
 
 .status-group {
     display: flex;
@@ -127,14 +130,14 @@ body {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: #540B0E;
-    /* YOUR SIGNATURE COLOR */
+    /* PRIMARY COLOR */
     text-align: center;
     min-width: 260px;
     white-space: nowrap;
 }
 
 
-/* ----- FOOTER (Icon Links with Burgundy Hover) ----- */
+/* ----- FOOTER (Icons default to Burgundy) ----- */
 
 .footer {
     margin-top: 3rem;
@@ -159,17 +162,32 @@ body {
     padding: 0.5rem;
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s, opacity 0.2s;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .social-links a:hover {
-    border-bottom-color: #540B0E;
-    /* YOUR SIGNATURE COLOR */
+    border-bottom-color: #000;
+    /* Black underline on hover */
     opacity: 1;
 }
 
 .social-links a svg {
     display: block;
+}
+
+
+/* Override SVG fill to Burgundy */
+
+.social-links a svg path {
+    fill: #540B0E;
+    transition: fill 0.2s;
+}
+
+
+/* On hover, icons turn black */
+
+.social-links a:hover svg path {
+    fill: #000;
 }
 
 .copyright {
