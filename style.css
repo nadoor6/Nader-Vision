@@ -62,14 +62,14 @@ body {
 }
 
 
-/* ----- DIVIDER (Short & Centered) ----- */
+/* ----- DIVIDER (Burgundy #540B0E) ----- */
 
 .divider {
     width: 60px;
     height: 2px;
-    background: #000;
+    background: #540B0E;
     margin: 1rem 0;
-    opacity: 0.15;
+    opacity: 0.4;
 }
 
 
@@ -82,6 +82,7 @@ body {
     letter-spacing: -0.03em;
     max-width: 900px;
     margin: 0.5rem 0;
+    color: #000;
 }
 
 .subhead-text {
@@ -94,7 +95,7 @@ body {
 }
 
 
-/* ----- STATUS GROUP (Fixed Widths to Prevent Shifting) ----- */
+/* ----- STATUS GROUP (Countdown Value in Burgundy) ----- */
 
 .status-group {
     display: flex;
@@ -125,14 +126,15 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #000;
+    color: #540B0E;
+    /* YOUR SIGNATURE COLOR */
     text-align: center;
     min-width: 260px;
     white-space: nowrap;
 }
 
 
-/* ----- FOOTER (Centered with Icon Links) ----- */
+/* ----- FOOTER (Icon Links with Burgundy Hover) ----- */
 
 .footer {
     margin-top: 3rem;
@@ -161,7 +163,8 @@ body {
 }
 
 .social-links a:hover {
-    border-bottom-color: #000;
+    border-bottom-color: #540B0E;
+    /* YOUR SIGNATURE COLOR */
     opacity: 1;
 }
 
