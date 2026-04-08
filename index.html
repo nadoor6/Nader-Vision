@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NADER VISION · Rebuilding Aleppo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon (Optional but recommended) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+
+    <main>
+        <div class="container">
+            <!-- Header: The Signal -->
+            <header class="site-header">
+                <span class="logo">NADER VISION</span>
+                <span class="location">📍 ALEPPO, SYRIA</span>
+            </header>
+
+            <!-- Hero: The Statement -->
+            <section class="hero">
+                <h1 class="main-quote">
+                    Rebuilding begins <br>with a single foundation.
+                </h1>
+                <div class="divider"></div>
+                <p class="subhead">
+                    I'm Nader. 18. In my final year of high school.<br> This is the starting line of the new Syrian skyline.
+                </p>
+            </section>
+
+            <!-- Status: The Countdown (Proof of Work) -->
+            <section class="status-block">
+                <div class="status-item">
+                    <span class="label">FOCUS MODE</span>
+                    <span class="value">FINALS IN <span id="countdown-timer">--</span></span>
+                </div>
+                <div class="status-item">
+                    <span class="label">CURRENT CHAPTER</span>
+                    <span class="value">STUDENT · DEVELOPER</span>
+                </div>
+            </section>
+
+            <!-- Footer: The Connection -->
+            <footer class="site-footer">
+                <div class="social-links">
+                    <a href="https://x.com/iiiiinader" target="_blank" class="link-underline">X/TWITTER →</a>
+                    <a href="https://instagram.com/iiiiinader" target="_blank" class="link-underline">INSTAGRAM →</a>
+                </div>
+                <div class="copyright">
+                    <span>© 2026 NADER VISION · DOCUMENTING THE RISE</span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Simple JS for Countdown (Finals in 2 months approx) -->
+    <script>
+        // Set the date we're counting down to (e.g., June 10, 2026)
+        var countDownDate = new Date("June 10, 2026 00:00:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            if (days > 0) {
+                document.getElementById("countdown-timer").innerHTML = days + " DAYS";
+            } else {
+                document.getElementById("countdown-timer").innerHTML = "EXAM TIME";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
