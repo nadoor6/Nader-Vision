@@ -1,30 +1,14 @@
 /* -----------------------------------------------
-   ENVEE IDENTITY — Dark Vintage Luxury
-   Oxblood #540B0E / Manuscript #FFFBF5
-   Primary Font: Denvile Vintage Demo
-   Secondary Font: Inter Light
+   ENVEE — Centered Minimal Luxury
+   With subtle animations and atmospheric depth
 ----------------------------------------------- */
 
-
-/* Custom Font Face */
-
-
-/* Custom Font Face — Denvile Drawn */
-
-@font-face {
-    font-family: 'Denvile Vintage';
-    src: url('assets/fonts/DENVILE-DRAWN-BF65FE5DA374DAC.OTF') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+:root {
+    --envee-width: 330px;
+    --page-padding: 2rem;
+    --transition-slow: 0.6s;
+    --transition-fast: 0.2s;
 }
-
-
-/* Google Font for Body */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
-
-/* Reset & Base */
 
 * {
     margin: 0;
@@ -32,323 +16,192 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
 body {
-    background-color: #FFFBF5;
+    background: radial-gradient(circle at 50% 40%, #FFFBF5 0%, #F5EDE3 100%);
     color: #540B0E;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    line-height: 1.5;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 2.5rem;
-    /* Subtle Grain Texture Overlay */
+    padding: var(--page-padding);
+    line-height: 1.5;
     position: relative;
 }
 
-body::before {
+
+/* Optional Grain Texture Overlay — Uncomment to enable */
+
+
+/*
+body::after {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/texture.png');
-    /* Optional: a subtle noise/grain png */
-    opacity: 0.03;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)" opacity="0.03" /%3E%3C/svg%3E');
     pointer-events: none;
     z-index: 999;
 }
+*/
 
-
-/* Main Layout Container — Asymmetric Grid */
-
-.main-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr 2fr;
-    max-width: 1400px;
+.container {
+    max-width: 800px;
     width: 100%;
-    margin: 0 auto;
-    gap: 0;
-    position: relative;
-    z-index: 1;
+    text-align: center;
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
-/* Vertical Rules — Architectural Lines */
+/* ENVEE Logo */
 
-.v-line {
-    width: 1px;
-    background-color: #540B0E;
-    opacity: 0.2;
-    height: 100%;
-    min-height: 400px;
-    margin: 0 1.5rem;
+.envee-logo {
+    margin-bottom: 0.5rem;
+    animation: softReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: scale(0.98);
+    animation-delay: 0.1s;
 }
 
-
-/* Left Column — Arabic & Vertical Context */
-
-.col-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-right: 2rem;
+@keyframes softReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.arabic-primary {
-    margin-top: 0;
-}
-
-.arabic-primary img,
-.arabic-primary svg {
-    max-width: 160px;
+.envee-logo img {
+    width: var(--envee-width);
     height: auto;
     display: block;
+    margin: 0 auto;
+    transition: transform 0.4s ease;
 }
 
-.col-left-footer {
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    opacity: 0.5;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    margin-bottom: 1rem;
+.envee-logo img:hover {
+    transform: scale(1.01);
 }
 
 
-/* Middle Column — The Axis */
-
-.col-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0 1rem;
-}
-
-
-/* Right Column — Brand & Content */
-
-.col-right {
-    padding-left: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 580px;
-}
-
-
-/* Typography */
-
-.envee-wordmark {
-    font-family: 'Denvile Vintage', 'Times New Roman', serif;
-    font-size: 5.5rem;
-    font-weight: normal;
-    letter-spacing: 0.25em;
-    margin-right: -0.25em;
-    line-height: 1.1;
-    color: #540B0E;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
+/* Tagline */
 
 .tagline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 200;
     font-size: 0.7rem;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    margin-bottom: 2.5rem;
-    color: #540B0E;
-    opacity: 0.8;
-}
-
-.divider-short {
-    width: 60px;
-    height: 1px;
-    background-color: #540B0E;
-    opacity: 0.3;
-    margin: 1.5rem 0 1.5rem 0;
-}
-
-.address-block {
-    font-family: 'Inter', sans-serif;
+    margin-bottom: 1.25rem;
+    opacity: 0;
     font-weight: 300;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+
+/* Divider */
+
+hr {
+    border: none;
+    border-top: 1px solid #540B0E;
+    opacity: 0;
+    width: 0px;
+    margin: 1rem auto;
+    animation: expandLine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.7s;
+}
+
+@keyframes expandLine {
+    0% {
+        width: 0px;
+        opacity: 0;
+    }
+    100% {
+        width: 60px;
+        opacity: 0.2;
+    }
+}
+
+
+/* Address Block */
+
+.address {
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 1.8;
-    opacity: 0.7;
+    opacity: 0;
     margin-bottom: 3rem;
+    font-weight: 300;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.address span {
+    transition: opacity 0.3s ease;
+}
+
+.address:hover span {
+    opacity: 1 !important;
 }
 
 
-/* Navigation — Minimal, Inline */
+/* Navigation */
 
-.nav-inline {
+.nav {
     display: flex;
+    justify-content: center;
     gap: 2.5rem;
     font-size: 0.65rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 1.1s;
 }
 
-.nav-inline a {
+.nav a {
     color: #540B0E;
     text-decoration: none;
     opacity: 0.5;
-    transition: opacity 0.2s;
     padding-bottom: 3px;
     border-bottom: 1px solid transparent;
+    transition: opacity 0.3s ease, border-color 0.3s ease, letter-spacing 0.4s ease;
 }
 
-.nav-inline a:hover {
+.nav a:hover {
     opacity: 1;
     border-bottom-color: #540B0E;
-}
-
-
-/* Identity Page Specific */
-
-.page-header {
-    margin-bottom: 2.5rem;
-}
-
-.page-header h2 {
-    font-family: 'Denvile Vintage', serif;
-    font-size: 2.5rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-}
-
-.page-header .subhead {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    opacity: 0.6;
-}
-
-.identity-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.identity-section {
-    margin-bottom: 2.5rem;
-}
-
-.identity-section h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    opacity: 0.7;
-}
-
-.palette-display {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.swatch-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.swatch {
-    width: 70px;
-    height: 70px;
-}
-
-.swatch.oxblood {
-    background-color: #540B0E;
-}
-
-.swatch.manuscript {
-    background-color: #FFFBF5;
-    border: 1px solid #540B0E;
-}
-
-.swatch-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    opacity: 0.7;
-}
-
-.monogram-large {
-    font-family: 'Denvile Vintage', serif;
-    font-size: 4rem;
-    letter-spacing: 0.15em;
-    line-height: 1;
-}
-
-.font-sample {
-    font-family: 'Denvile Vintage', serif;
-    font-size: 2rem;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
-}
-
-.font-sample-body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-
-.arabic-sample-large {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 0.25rem;
-}
-
-.rule-item {
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: baseline;
-}
-
-.rule-item::before {
-    content: "—";
-    margin-right: 0.75rem;
-    opacity: 0.5;
-}
-
-
-/* Contact Page */
-
-.contact-wrapper {
-    max-width: 500px;
-}
-
-.contact-email-large {
-    font-family: 'Denvile Vintage', serif;
-    font-size: 1.8rem;
-    letter-spacing: 0.1em;
-    margin: 1.5rem 0;
-}
-
-.contact-email-large a {
-    color: #540B0E;
-    text-decoration: none;
-    border-bottom: 1px solid #540B0E;
-    padding-bottom: 4px;
-}
-
-.contact-note {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    line-height: 1.8;
-    opacity: 0.7;
+    letter-spacing: 0.35em;
 }
 
 
@@ -363,47 +216,62 @@ body::before {
     color: #540B0E;
     text-decoration: none;
     opacity: 0.4;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .back-link:hover {
     opacity: 0.8;
+    transform: translateX(-4px);
 }
 
 
-/* Responsive */
+/* Contact Page Specific */
 
-@media (max-width: 900px) {
-    body {
-        padding: 1.5rem;
-        align-items: flex-start;
+.contact-email {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    margin: 1.5rem 0;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.contact-email a {
+    color: #540B0E;
+    text-decoration: none;
+    border-bottom: 1px solid #540B0E;
+    padding-bottom: 3px;
+    transition: letter-spacing 0.3s ease, padding-bottom 0.2s ease;
+}
+
+.contact-email a:hover {
+    letter-spacing: 0.15em;
+    padding-bottom: 6px;
+}
+
+.contact-note {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    line-height: 1.8;
+    opacity: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.7s;
+}
+
+
+/* Mobile Adjustments */
+
+@media (max-width: 600px) {
+     :root {
+        --envee-width: 200px;
     }
-    .main-grid {
-        grid-template-columns: 1fr;
+    .nav {
         gap: 1.5rem;
     }
-    .v-line {
-        display: none;
-    }
-    .col-middle {
-        display: none;
-    }
-    .col-left {
-        flex-direction: row;
-        align-items: center;
-        padding-right: 0;
-    }
-    .col-left-footer {
-        writing-mode: horizontal-tb;
-        transform: none;
-    }
-    .col-right {
-        padding-left: 0;
-    }
-    .envee-wordmark {
-        font-size: 3.5rem;
-    }
-    .identity-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .contact-email {
+        font-size: 1.1rem;
     }
 }
